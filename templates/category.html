@@ -1,0 +1,28 @@
+{% include "navbar.html" %}
+
+		<br>
+		<br>
+		<br>
+		<br>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<ul>
+		{% for message in messages %}
+		<li><strong>{{message}}</strong></li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+		{% endwith %}
+
+<h1>List of Categories</h1>
+<br>
+{% for i in cat %}
+<ul>
+	<li><a href="{{url_for('showCategoryItems',category_id = i.id)}}">{{i.name}}</a></li>
+</ul>
+{% endfor %}
+</body>
+</html>
+ 
+
+

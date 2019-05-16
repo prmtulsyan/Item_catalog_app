@@ -1,0 +1,25 @@
+{% include "navbar.html" %}
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<form action="#" method="POST">
+		<label>Name:</label>
+		<input type="text" name="name" placeholder="Enter item name">
+		<br><br>
+		<label>Description:</label>
+		<input type="text" name="description" placeholder="Enter the description of the item">
+		<br><br><br>
+		<select name="category">
+			{% for category in categories %}
+    							<option value="{{category.id}}">{{category.name}}</option>
+    						{% endfor %}
+		</select>
+		<input type="submit" value="submit">
+		</form>
+</body>
+</html>
+
+
